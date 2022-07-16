@@ -18,5 +18,5 @@
     "rules": {
         "prettier/prettier": "error"
     },
-    "import/no-unresolved": "off"
+    "import/no-unresolved": "error"
 }
