@@ -2,4 +2,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: npm run build && node ./dist/index.js
+  web: npm run build && node ./dist/server.js
