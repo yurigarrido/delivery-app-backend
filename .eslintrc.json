@@ -1,10 +1,7 @@
 {
-    "root": true,
     "env": {
         "browser": true,
-        "commonjs": true,
-        "es6": true,
-        "node": true
+        "es2021": true
     },
     "extends": [
         "airbnb-base", "prettier"
@@ -21,5 +18,4 @@
         "prettier/prettier": "error"
     },
     "import/no-unresolved": "off"
-
 }
