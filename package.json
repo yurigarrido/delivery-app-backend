@@ -1,0 +1,44 @@
+{
+  "name": "delivery-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev -r dotenv/config ./src/server.ts",
+    "build": "tsc",
+    "start": "node -r dotenv/config ./dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yurigarrido/delivery-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yurigarrido/delivery-backend/issues"
+  },
+  "homepage": "https://github.com/yurigarrido/delivery-backend#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.21.3",
+    "ts-node-dev": "^2.0.0"
+  }
+}
