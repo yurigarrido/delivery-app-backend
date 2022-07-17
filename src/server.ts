@@ -3,12 +3,13 @@ import db from "./database/db";
 import { router } from "./routes";
 import { LoginRouter } from "./routes/loginRouter";
 
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(json())
 app.use(router)
 
-app.listen(3000, async () => {
+app.listen(PORT, async () => {
   await db.sync()
-  console.log("listening on port 3000");
+  console.log(`PORT ${PORT}`);
 });

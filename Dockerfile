@@ -8,4 +8,4 @@ RUN npm install
 
 COPY . .
 
-CMD ["node", "./dist/server.js"]
+CMD ["node", "/dist/server.js"]
