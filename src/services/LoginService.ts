@@ -4,7 +4,7 @@ import { IUserWithToken } from '../interfaces/User';
 const md5 = require('md5');
 
 class UserService {
-  async findOne(email: string, password: string): Promise<IUserWithToken> {
+  async findOne(email: string, password: string) {
     const user = await UserModel.findOne({ where: { email }, raw: true });
 
   if (!user) return undefined;
@@ -17,7 +17,7 @@ class UserService {
     role: user.role,
     email: user.email,
   },
-  token };
+  token } as IUserWithToken;
   }
 }
 

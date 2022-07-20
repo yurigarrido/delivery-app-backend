@@ -8,5 +8,4 @@ export interface IUser {
 export interface IUserWithToken  {
   user: IUser,
   token: string;
-
 }
