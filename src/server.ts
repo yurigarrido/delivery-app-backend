@@ -11,6 +11,6 @@ app.use(router)
 app.use(cors())
 
 app.listen(PORT, async () => {
-  await db.sync()
+  // await db.sync()
   console.log(`PORT ${PORT}`);
 });
