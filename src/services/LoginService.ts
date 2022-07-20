@@ -1,9 +1,10 @@
 import UserModel from '../database/models/UserModel';
 import auth from '../helpers/auth/jsonWebToken';
+import { IUserWithToken } from '../interfaces/User';
 const md5 = require('md5');
 
 class UserService {
-  async findOne(email: string, password: string) {
+  async findOne(email: string, password: string): Promise<IUserWithToken> {
     const user = await UserModel.findOne({ where: { email }, raw: true });
 
   if (!user) return undefined;
