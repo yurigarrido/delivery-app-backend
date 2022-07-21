@@ -1,5 +1,9 @@
 import express, { json } from "express";
 import db from "./database/db";
+import Product from "./database/models/ProductsModel";
+import Sale from "./database/models/SalesModel";
+import SaleProduct from "./database/models/SalesProducts";
+import User from "./database/models/UserModel";
 import { router } from "./routes";
 const cors = require('cors')
 
@@ -11,6 +15,9 @@ app.use(router)
 app.use(cors())
 
 app.listen(PORT, async () => {
-  // await db.sync()
+  await User.sync()
+  await Sale.sync()
+  await SaleProduct.sync()
+  await Product.sync()
   console.log(`PORT ${PORT}`);
 });

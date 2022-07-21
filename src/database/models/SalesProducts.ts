@@ -60,3 +60,5 @@ SaleProduct.init({
     as: 'sales',
     through: SaleProduct,
   });
+
+export default SaleProduct
