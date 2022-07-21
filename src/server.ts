@@ -8,9 +8,18 @@ import { router } from "./routes";
 const cors = require('cors')
 
 const PORT = process.env.PORT || 3000;
-const app = express();
 
-app.use(cors())
+ const accessControl: express.RequestHandler = (_req, res, next) => {
+      res.header('Access-Control-Allow-Origin', '*');
+      res.header('Access-Control-Allow-Methods', 'GET,POST,DELETE,OPTIONS,PUT,PATCH');
+      res.header('Access-Control-Allow-Headers', '*');
+      next();
+    };
+
+    const app = express();
+    app.use(accessControl);
+
+// app.use(cors())
 app.use(json())
 app.use(router)
 
