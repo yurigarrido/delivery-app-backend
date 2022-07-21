@@ -23,7 +23,7 @@ class UserService {
   async create(email: string, password: string, name:string, role:string) {
     const hasUser = await UserModel.findOne({ where: { email }})
     if (hasUser) return undefined;
-    const newUser = await UserModel.create({ email, password, name, role });
+    const newUser = await UserModel.create({ email, password: md5(password), name, role });
     return newUser;
   }
 }
