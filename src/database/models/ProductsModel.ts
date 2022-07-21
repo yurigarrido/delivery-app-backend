@@ -29,4 +29,10 @@ Product.init(
   },
 );
 
+const  initialize = async () => {
+  await Product.sync();
+}
+
+initialize();
+
 export default Product;
