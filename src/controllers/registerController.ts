@@ -8,7 +8,7 @@ class RegisterController {
     const { email, password, name } = req.body;
     
     const user = await LoginService.create(email, password, name, 'customer');
-    if( !user) {
+    if(!user) {
       return res.status(400).json({ message: "user already exists"})
     }
     return res.status(201).json(user)

@@ -7,9 +7,8 @@ class RegisterMiddleware {
       return { status: 401, message: 'Name must be at least 12 characters long', sucess: false };
     }
     return { sucess: true, status: 200 };
-  }
-;
-  private validatePassword = (password: string) => {
+  };
+    private validatePassword = (password: string) => {
     if (password.length < 6) {
       return { status: 401, message: 'Password must be at least 6 characters long', sucess: false };
     }
@@ -28,27 +27,27 @@ class RegisterMiddleware {
   };
   
   public validateRegistration= (req: Request, res: Response, next: NextFunction) => {
-    const { email, password, name } = req.body;
+    const { email, password } = req.body;
     
-    if(!name || !email || !password) {
+    if( !email || !password) {
       return { status: 400, message: 'All fields must be filled', sucess: false }; 
     }
     const isEmailValid = this.validateEmail(email);
     const isPasswordValid = this.validatePassword(password);
-    const isNameValid = this.validateName(name);
+    // const isNameValid = this.validateName(name);
   
     if (!isEmailValid.sucess) {
       const { message, status } = isEmailValid;
-      return res.status(status).json({ message });
+      return res.status(status).json({ message: message });
     }
     if (!isPasswordValid.sucess) {
       const { message, status } = isPasswordValid;
-      return res.status(status).json({ message });
+      return res.status(status).json({ message: message });
     }
-    if (!isNameValid.sucess) {
-      const { message, status } = isPasswordValid;
-      return res.status(status).json({ message });
-    }
+    // if (!isNameValid.sucess) {
+    //   const { message, status } = isPasswordValid;
+    //   return res.status(status).json({ message: message });
+    // }
     next();
   };
 }

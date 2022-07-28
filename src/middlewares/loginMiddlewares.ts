@@ -28,7 +28,6 @@ class LoginMiddleware {
   
   public validateLogin = (req: Request, res: Response, next: NextFunction) => {
     const { email, password } = req.body;
-  
     const isEmailValid = this.validateEmail(email);
     const isPasswordValid = this.validatePassword(password);
   
